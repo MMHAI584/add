@@ -3,58 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your Link</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Advertising Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .advertising-section {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        .timer-container {
+            margin-top: 50px;
+            font-size: 3em;
+            color: #555;
+        }
+        .open-link-button {
+            display: none; /* Hidden by default */
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .open-link-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-center justify-center min-h-screen p-4">
-    <div class="container bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md text-center">
-        <h1 class="text-3xl font-bold mb-6">Your Link is Almost Ready!</h1>
-        
-        <!-- Adsterra Banner Ad (300x250) - Replace with your actual code -->
-        <div class="ad-container mb-6 mx-auto" style="width: 300px; height: 250px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #555;">
-            <!-- Adsterra 300x250 Banner Code Here -->
-            <p>Adsterra 300x250 Banner</p>
-            <!-- Instructions: Replace this div content with your actual Adsterra 300x250 banner code. -->
-        </div>
-
-        <p class="text-lg mb-4">Please wait <span id="countdown" class="font-bold text-blue-600 dark:text-blue-400">5</span> seconds...</p>
-        
-        <button id="getLinkBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg opacity-50 cursor-not-allowed transition duration-300" disabled>
-            Get Link
-        </button>
-
-        <!-- Adsterra Banner Ad (728x90) - Replace with your actual code -->
-        <div class="ad-container mt-6 mx-auto" style="width: 728px; height: 90px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #555;">
-            <!-- Adsterra 728x90 Banner Code Here -->
-            <p>Adsterra 728x90 Banner</p>
-            <!-- Instructions: Replace this div content with your actual Adsterra 728x90 banner code. -->
-        </div>
-
-        <!-- Theme Toggle -->
-        <div class="mt-8">
-            <label for="themeToggle" class="inline-flex items-center cursor-pointer">
-                <span class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300">Light</span>
-                <div class="relative">
-                    <input type="checkbox" id="themeToggle" class="sr-only peer">
-                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                </div>
-                <span class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Dark</span>
-            </label>
-        </div>
-
+<body>
+    <div class="advertising-section">
+        <h1>Special Offer!</h1>
+        <p>Don't miss out on our amazing deals!</p>
     </div>
 
-    <script src="script.js"></script>
-    <!-- Adsterra Popunder Ad - Place this script as instructed by Adsterra, usually in the body or head -->
-    <!-- Instructions: Replace the script below with your actual Adsterra Popunder script. -->
+    <!-- Adsterra Ad Placeholder -->
+    <div id="adsterra-ad-container" style="margin-top: 20px; text-align: center;">
+        <script type="text/javascript"> 
+ 	 atOptions = { 
+ 	 	 'key' : '362dc406b1389a197a13b398f23c321a', 
+ 	 	 'format' : 'iframe', 
+ 	 	 'height' : 250, 
+ 	 	 'width' : 300, 
+ 	 	 'params' : {} 
+ 	 }; 
+ </script> 
+ <script type="text/javascript" src="//waistcoatreferchemistry.com/362dc406b1389a197a13b398f23c321a/invoke.js"></script>
+    </div>
+
+    <div class="timer-container">
+        <span id="timer">5</span> seconds remaining...
+    </div>
+
+    <a href="https://www.example.com" target="_blank" class="open-link-button" id="openLinkBtn">
+        Open Link
+    </a>
+
     <script>
-        // (function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://go.afl.xyz/xxxx/xxxx','YOUR_POP_ZONE_ID',document.body||document.documentElement)
-    </script>
-    <!-- Adsterra Push Notification Ad - Place this script as instructed by Adsterra -->
-    <!-- Instructions: Replace the script below with your actual Adsterra Push Notification script. -->
-    <script>
-        // (function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://go.afl.xyz/xxxx/xxxx','YOUR_PUSH_ZONE_ID',document.body||document.documentElement)
+        const timerElement = document.getElementById('timer');
+        const openLinkBtn = document.getElementById('openLinkBtn');
+        let timeLeft = 5;
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerElement.parentElement.style.display = 'none'; // Hide timer text
+                openLinkBtn.style.display = 'block'; // Show the button
+            }
+        }, 1000);
     </script>
 </body>
 </html>
