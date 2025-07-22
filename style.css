@@ -1,0 +1,20 @@
+/* Basic styles for responsiveness and theme toggle */
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 90%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+/* Dark mode styles */
+body.dark .ad-container {
+    background-color: #333;
+    color: #bbb;
+}
