@@ -78,19 +78,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to inject and execute a script string
+    function injectScript(scriptCode) {
+        if (!scriptCode) return;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(scriptCode, 'text/html');
+        const scripts = doc.querySelectorAll('script');
+        scripts.forEach(s => {
+            const newScript = document.createElement('script');
+            if (s.src) {
+                newScript.src = s.src;
+            } else {
+                newScript.textContent = s.textContent;
+            }
+            // Copy attributes like type, data-zone, etc.
+            Array.from(s.attributes).forEach(attr => {
+                newScript.setAttribute(attr.name, attr.value);
+            });
+            document.body.appendChild(newScript);
+        });
+    }
+
     // Load and inject Adsterra Push Notification script if available in localStorage
     const pushAdCode = localStorage.getItem('pushAd');
-    if (pushAdCode) {
-        const script = document.createElement('script');
-        script.innerHTML = pushAdCode;
-        document.body.appendChild(script);
-    }
+    injectScript(pushAdCode);
 
     // Load and inject Adsterra Popunder script if available in localStorage
     const popunderAdCode = localStorage.getItem('popunderAd');
-    if (popunderAdCode) {
-        const script = document.createElement('script');
-        script.innerHTML = popunderAdCode;
-        document.body.appendChild(script);
-    }
+    injectScript(popunderAdCode);
 });
